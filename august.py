@@ -1,11 +1,9 @@
 import hashlib
 
-# ---------------- HASH ----------------
 def generate_hash(text):
     return hashlib.sha256(text.encode()).hexdigest()
 
 
-# ---------------- PRE-TRANSFORMATION ----------------
 def pre_transform(text):
     text = text[::-1]  # reverse
 
@@ -24,7 +22,6 @@ def reverse_pre_transform(text):
     return ''.join(text_list)[::-1]
 
 
-# ---------------- BLOCK PROCESSING ----------------
 def block_process(text, key):
     b = (len(key) % 4) + 2
     blocks = [text[i:i+b] for i in range(0, len(text), b)]
@@ -53,7 +50,6 @@ def reverse_block_process(text, key):
     return result
 
 
-# ---------------- HASH INTERLEAVING ----------------
 def interleave_hash(text, hash_val, key):
     r = (len(key) % 3) + 2
 
@@ -92,7 +88,6 @@ def extract_hash(text, key):
     return original, extracted_hash
 
 
-# ---------------- AUGUST CIPHER ----------------
 def august_encrypt(text, rounds):
     for _ in range(rounds):
         result = ""
@@ -119,7 +114,7 @@ def august_decrypt(text, rounds):
     return text
 
 
-# ---------------- ENCRYPT ----------------
+
 def encrypt_message(plaintext, key):
     p1 = pre_transform(plaintext)
     p2 = block_process(p1, key)
@@ -134,7 +129,7 @@ def encrypt_message(plaintext, key):
     return cipher
 
 
-# ---------------- DECRYPT ----------------
+
 def decrypt_message(ciphertext, key):
     rounds = (len(key) % 5) + 1
 
@@ -153,7 +148,6 @@ def decrypt_message(ciphertext, key):
     return f" Decrypted Message: {original}"
 
 
-# ---------------- MAIN PROGRAM ----------------
 if __name__ == "__main__":
     print("=== August Cipher + Hash System ===")
 
