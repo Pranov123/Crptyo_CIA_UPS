@@ -189,5 +189,3 @@ Decrypted Text = HELLO
 
 ---
 
-mo)**
-```
