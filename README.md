@@ -1,5 +1,5 @@
 
-# 🔐 August Cipher + Hash-Based Secure Messaging System
+# August Cipher + Hash-Based Secure Messaging System
 
 A custom cryptographic system that combines:
 - Structural transformations
@@ -10,18 +10,18 @@ This project demonstrates how **confidentiality + integrity** can be achieved us
 
 ---
 
-## 🚀 Features
+## Features
 
-- 🔁 Reversible transformation pipeline
-- 🔒 SHA-256 based integrity verification
-- 🔗 Hash interleaving (instead of simple appending)
-- 🔁 Multi-pass August cipher (shift = +1 only)
-- 🧩 Block-based scrambling
-- 🧠 Key-driven variability (deterministic, not random)
+- Reversible transformation pipeline
+- SHA-256 based integrity verification
+- Hash interleaving (instead of simple appending)
+- Multi-pass August cipher (shift = +1 only)
+- Block-based scrambling
+- Key-driven variability (deterministic, not random)
 
 ---
 
-## 🧠 System Design
+## System Design
 
 The system is divided into two parts:
 
@@ -33,9 +33,9 @@ Reverses transformations and verifies integrity using hash comparison.
 
 ---
 
-## ⚙️ Algorithm
+## Algorithm
 
-### 🔐 Encryption
+### Encryption
 
 **Input:**
 - Plaintext `P`
@@ -101,7 +101,7 @@ Final Output → `C` (Ciphertext)
 
 ---
 
-## 🔓 Decryption
+## Decryption
 
 **Input:**
 - Ciphertext `C`
@@ -153,7 +153,7 @@ Final Output → Original plaintext `P`
 
 ---
 
-## 🧪 Example
+## Example
 
 ```
 
@@ -169,7 +169,7 @@ Decrypted Text = HELLO
 
 ---
 
-## ⚠️ Important Notes
+## Important Notes
 
 - The August cipher uses **strict shift = +1** (no variation allowed)
 - Hashing is **one-way** and used only for integrity verification
@@ -178,7 +178,7 @@ Decrypted Text = HELLO
 
 ---
 
-## 🧠 Design Rationale
+## Design Rationale
 
 - **Reversible transformations** ensure correct decryption
 - **Hash interleaving** embeds integrity within data (harder to tamper)
